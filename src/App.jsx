@@ -1,3 +1,4 @@
+import heroCar from './assets/herocar.png';
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -161,7 +162,7 @@ export default function App() {
 
         {/* Core Animated Visual Object (Sleek Car Graphic) */}
         <div ref={carRef} className="car-visual-wrapper">
-          <img src="/src/assets/herocar.png" alt="Car Visual" className="car-svg" />
+          <img src={heroCar} alt="Car Visual" className="car-svg" />
             {/* Underglow Effect */}
             <ellipse cx="250" cy="170" rx="200" ry="20" fill="url(#carGlow)" opacity="0.8" />
             
