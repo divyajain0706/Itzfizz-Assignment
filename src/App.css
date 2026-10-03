@@ -1,0 +1,269 @@
+/* Custom Human Color Palette & Fonts */
+:root {
+  --bg-gradient: radial-gradient(circle at 20% 20%, #1e1b4b 0%, #0f172a 60%, #080811 100%);
+  --accent-gradient: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);
+  --purple-glow: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  --amber-gold: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --text-main: #f8fafc;
+  --text-sub: #cbd5e1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0f172a;
+  background-image: var(--bg-gradient);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Vibrant Organic Ambient Lights */
+.ambient-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.glow-1 {
+  width: 500px;
+  height: 500px;
+  background: #ff5e62;
+  top: -150px;
+  left: -100px;
+}
+
+.glow-2 {
+  width: 600px;
+  height: 600px;
+  background: #8b5cf6;
+  bottom: -100px;
+  right: -150px;
+}
+
+/* Header & Creative Badge */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.logo span {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 6px;
+}
+
+.nav-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #fff;
+  background: var(--accent-gradient);
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 94, 98, 0.3);
+}
+
+/* Hero Layout */
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 130px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Headline Styling */
+.hero-headline {
+  font-size: clamp(2rem, 4.5vw, 4.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.letter {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.letter.space {
+  width: 0.7em;
+}
+
+/* Colorful Impact Cards */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  width: 90%;
+  max-width: 1100px;
+  z-index: 20;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+}
+
+.stat-card:nth-child(2)::before {
+  background: var(--purple-glow);
+}
+
+.stat-card:nth-child(3)::before {
+  background: var(--amber-gold);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.3rem;
+}
+
+.stat-card:nth-child(2) .stat-number {
+  background: var(--purple-glow);
+  -webkit-background-clip: text;
+}
+
+.stat-card:nth-child(3) .stat-number {
+  background: var(--amber-gold);
+  -webkit-background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Car Graphic Styling */
+.car-visual-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 18%;
+  width: 400px;
+  max-width: 80vw;
+  z-index: 15;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.car-svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 35px rgba(255, 94, 98, 0.35));
+}
+
+/* Content Section Below */
+.content-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #090d16;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 30;
+  text-align: center;
+  padding: 2rem;
+}
+
+.content-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content-section p {
+  color: var(--text-sub);
+  font-size: 1.15rem;
+}
+
+/* Responsive Rules */
+@media (max-width: 900px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-headline {
+    letter-spacing: 0.15em;
+  }
+}
+
+@media (max-width: 500px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+}
